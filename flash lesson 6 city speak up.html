@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>flash lesson 6 city speak up</title>
+  <style>
+    :root {
+      --blue-front: #1e3a8a;
+      --text-dark: #0f172a;
+      --card-radius: 18px;
+      --shadow-soft: 0 12px 25px rgba(15, 23, 42, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #1e3a8a 0, #020617 55%, #020617 100%);
+      color: #e5e7eb;
+      min-height: 100vh;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      padding: 20px 12px 32px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1080px;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(18px);
+      border-radius: 24px;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.7);
+      padding: 20px 18px 26px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(30, 64, 175, 0.2);
+      color: #c7d2fe;
+      border: 1px solid rgba(129, 140, 248, 0.6);
+      width: fit-content;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #a5b4fc;
+      box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.4);
+    }
+
+    h1 {
+      font-size: 1.45rem;
+      line-height: 1.25;
+      color: #f9fafb;
+    }
+
+    .subtitle {
+      font-size: 0.85rem;
+      color: #cbd5f5;
+      max-width: 460px;
+    }
+
+    .grid-wrapper {
+      margin-top: 10px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    @media (min-width: 640px) {
+      .page {
+        padding: 24px 22px 30px;
+      }
+      .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+    }
+
+    @media (min-width: 960px) {
+      .card-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+    }
+
+    .card {
+      perspective: 1200px;
+      cursor: pointer;
+      height: 160px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+      transform-style: preserve-3d;
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card.is-flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: var(--card-radius);
+      padding: 14px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .card-front {
+      background: radial-gradient(circle at top left, #1e3a8a, #1d4ed8);
+      color: #f9fafb;
+    }
+
+    .card-back {
+      background: #f9fafb;
+      color: var(--text-dark);
+      transform: rotateY(180deg);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      line-height: 1.35;
+      font-weight: 500;
+    }
+
+    @media (min-width: 768px) {
+      .card-text {
+        font-size: 1rem;
+      }
+      .card {
+        height: 170px;
+      }
+    }
+
+    .hint {
+      margin-top: 10px;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hint-kbd {
+      border-radius: 6px;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      padding: 2px 6px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="badge">
+        <span class="badge-dot"></span>
+        FLASHCARDS PREMIUM · SPEAK UP
+      </div>
+      <h1>Lesson 6 · City – Speak Up</h1>
+      <p class="subtitle">Toque ou clique em cada card para virar: frente em português, verso em inglês.</p>
+    </header>
+
+    <section class="grid-wrapper">
+      <div class="card-grid">
+
+        <!-- 1 -->
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                Eu venho de ____________. (cidade)
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                I COME FROM (city)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                Ela fica na __________ do Brasil e no estado de ____.<br />
+                (north; east; south; west; northeast; southeast; southwest; northwest)
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                IT IS IN THE __________ OF BRAZIL AND IN THE STATE OF____ (north; east; south; west; northeast; southeast; southwest; northwest)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                Dirigindo de ______ até a minha cidade leva cerca de __________.
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                DRIVING FROM TO MY CITY TAKES AROUND __________
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                Há cerca de __________________________ pessoas morando na minha cidade.
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                THERE ARE ABOUT _______________________________________PEOPLE LIVING IN MY CITY.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                O centro da cidade é (grande/pequeno) e (movimentado/tranquilo).
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                THE DOWNTOWN ____ _________IS (BIG/ SMALL) AND (BUSY/QUIET).
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                Lá, você encontra bancos, prédios, lojas, mercados, padarias e restaurantes.
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                THERE, YOU CAN FIND BANKS, BUILDINGS, SHOPS, GROCERY STORES, BAKERIES, AND RESTAURANTS.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                Em ______ também há _______________ (escolas, igrejas, museus).
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                IN THERE ARE ALSO _______________(schools, churchies, museums)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                O clima típico é _______________________________ (hot / cold / mild).
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                THE TYPICAL WEATHER IS _______________________________ (HOT/ COLD/ MILD)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9 advantage -->
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                A vantagem de morar em uma (cidade pequena / cidade grande) é _____________________.
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                THE ADVANTAGE OF LIVING IN A (SMALL TOWN/ BIG CITY) IS _____________________.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9.2 disadvantage -->
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                A desvantagem de morar em uma (cidade pequena / cidade grande) é _______.<br />
+                (fewer jobs, less fun, limited services / more traffic, expensive living, crowded places)
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                THE DISADVANTAGE OF LIVING IN A (SMALL TOWN/ BIG CITY) IS _______.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                A economia é sustentada por ____________________.
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                THE ECONOMY IS SUPPORTED BY .
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <p class="hint">
+        <span class="hint-kbd">Dica</span>
+        Toque nos cards no celular ou clique com o mouse para alternar entre português e inglês.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach((card) => {
+        card.addEventListener("click", () => {
+          card.classList.toggle("is-flipped");
+        });
+
+        card.addEventListener("keypress", (e) => {
+          const key = e.key || e.code;
+          if (key === "Enter" || key === " " || key === "Spacebar") {
+            e.preventDefault();
+            card.classList.toggle("is-flipped");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
