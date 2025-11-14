@@ -2,213 +2,108 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <title>FLASH • SPEAK UP — by Teacher Inês Braga</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FLASH • SPEAK UP • Hub</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root {
+      --bg: #050816;
+      --bg-card: #071a2f;
+      --bg-card-strong: #0b2c5a;
+      --text-main: #f5f7ff;
+      --text-muted: #c3c8e8;
+      --accent: #4f8dff;
+      --accent-soft: #29457a;
+      --radius-xl: 24px;
+      --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.6);
+      --shadow-card: 0 18px 40px rgba(0, 0, 0, 0.5);
     }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui; }
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      background: radial-gradient(circle at top, #102349 0, #050816 55%, #02030b 100%);
+      color: var(--text-main);
+      display: flex; align-items: center; justify-content: center;
+      padding: 32px 16px;
     }
-
-    header {
-      text-align: center;
-      padding: 24px 16px 12px;
+    .app {
+      width: 100%; max-width: 960px;
+      background: linear-gradient(145deg, rgba(10, 25, 60, 0.97), rgba(3, 8, 30, 0.98));
+      border-radius: 32px; padding: 32px 20px 24px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255,255,255,0.04);
     }
-
-    header h1 {
-      font-size: 1.4rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+    @media (min-width: 768px){ .app{ padding:40px 40px 32px;} }
+    .app-header{text-align:center;margin-bottom:28px;}
+    .app-title{font-size:1.9rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;margin-bottom:8px;}
+    .app-subtitle{font-size:0.95rem;color:var(--text-muted);}
+    .lessons-box{
+      margin-top:28px;
+      background: radial-gradient(circle at top left,#163a7a 0,#071a2f 55%,#050816 100%);
+      border-radius: var(--radius-xl);
+      padding:24px 18px 18px;
+      box-shadow: var(--shadow-card);
+      border:1px solid rgba(255,255,255,0.05);
     }
-
-    header p {
-      margin-top: 8px;
-      font-size: 0.9rem;
-      color: #9ca3af;
+    @media (min-width:768px){ .lessons-box{ padding:28px 26px 22px;} }
+    .lessons-heading{font-size:0.9rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px;}
+    .lesson-card{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      background: linear-gradient(135deg,#0b2c5a,#10408a);
+      border-radius:18px;padding:14px 14px 14px 18px;margin-bottom:12px;
+      box-shadow:0 16px 30px rgba(0,0,0,0.45);
+      border:1px solid rgba(255,255,255,0.06);
     }
-
-    main {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      padding: 16px;
+    .lesson-text h2{font-size:1rem;margin-bottom:4px;}
+    .lesson-text p{font-size:0.88rem;color:var(--text-muted);}
+    .lesson-button{
+      text-decoration:none;font-size:0.8rem;letter-spacing:0.16em;text-transform:uppercase;
+      color:var(--text-main);background:radial-gradient(circle at top left,#4f8dff,#244a93);
+      padding:10px 18px;border-radius:999px;border:1px solid rgba(255,255,255,0.25);white-space:nowrap;flex-shrink:0;
     }
-
-    .container {
-      width: 100%;
-      max-width: 720px;
-      padding: 16px;
-      background: rgba(15,23,42,0.75);
-      border-radius: 24px;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
-      border: 1px solid rgba(148,163,184,0.35);
-    }
-
-    .section-title {
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #93c5fd;
-      margin-bottom: 14px;
-    }
-
-    .lessons-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-
-    .lesson-card {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: radial-gradient(circle at top left, #1d4ed8, #020617);
-      border: 1px solid rgba(147,197,253,0.5);
-      text-decoration: none;
-      color: #f9fafb;
-      transition: transform 0.15s ease, box-shadow 0.15s ease,
-        border-color 0.15s ease, background 0.15s ease;
-    }
-
-    .lesson-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(15,23,42,0.7);
-      border-color: #facc15;
-      background: radial-gradient(circle at top left, #2563eb, #020617);
-    }
-
-    .lesson-main {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .lesson-title {
-      font-size: 0.98rem;
-      font-weight: 600;
-    }
-
-    .lesson-subtitle {
-      font-size: 0.8rem;
-      color: #d1d5db;
-    }
-
-    .lesson-tag {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.7);
-      border: 1px solid rgba(248,250,252,0.28);
-      color: #e5e7eb;
-      white-space: nowrap;
-    }
-
-    .hint {
-      font-size: 0.8rem;
-      color: #9ca3af;
-      margin-top: 4px;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.7rem;
-      color: #6b7280;
-      padding: 10px 12px 18px;
-    }
-
-    @media (max-width: 640px) {
-      header h1 {
-        font-size: 1.1rem;
-      }
-      .container {
-        padding: 14px;
-        border-radius: 18px;
-      }
-      .lesson-card {
-        padding: 12px 12px;
-      }
-      .lesson-title {
-        font-size: 0.95rem;
-      }
-    }
+    .tip{margin-top:18px;font-size:0.8rem;color:var(--text-muted);}
+    .footer{margin-top:18px;text-align:center;font-size:0.78rem;color:rgba(195,200,232,0.8);letter-spacing:0.18em;text-transform:uppercase;}
   </style>
 </head>
 <body>
-  <header>
-    <h1>FLASH • SPEAK UP</h1>
-    <p>Escolha a lição para abrir os flashcards interativos.</p>
-  </header>
+  <main class="app">
+    <header class="app-header">
+      <h1 class="app-title">FLASH • SPEAK UP</h1>
+      <p class="app-subtitle">Escolha a lição para abrir os flashcards interativos.</p>
+    </header>
+    <section class="lessons-box">
+      <h2 class="lessons-heading">Lessons</h2>
 
-  <main>
-    <div class="container">
-      <div class="section-title">Lessons</div>
+      <div class="lesson-card"><div class="lesson-text"><h2>Lesson 1 – Yourself</h2><p>Apresentação pessoal • Nome • Cidade • Idade • Trabalho • Estudos</p></div><a href="FLASH lesson 1 YOURSELF SPEAK UP 1.html" class="lesson-button">FLASHCARDS</a></div>
 
-      <div class="lessons-list">
-        <a class="lesson-card" href="FLASH lesson 1 YOURSELF SPEAK UP 1.html">
-          <div class="lesson-main">
-            <span class="lesson-title">Lesson 1 – Yourself</span>
-            <span class="lesson-subtitle">
-              Apresentação pessoal • Nome • Cidade • Idade • Trabalho • Estudos
-            </span>
-          </div>
-          <div class="lesson-tag">Flashcards</div>
-        </a>
+      <div class="lesson-card"><div class="lesson-text"><h2>Lesson 2 – My Family</h2><p>Estrutura familiar • Estado civil • Filhos • Irmãos • Pets • Relações familiares</p></div><a href="FLASH lesson 2 FAMILY SPEAK UP.html" class="lesson-button">FLASHCARDS</a></div>
 
-        <a class="lesson-card" href="FLASH lesson 2 FAMILY SPEAK UP.html">
-          <div class="lesson-main">
-            <span class="lesson-title">Lesson 2 – My Family</span>
-            <span class="lesson-subtitle">
-              Estrutura familiar • Estado civil • Filhos • Irmãos • Pets • Relações familiares
-            </span>
-          </div>
-          <div class="lesson-tag">Flashcards</div>
-        </a>
+      <div class="lesson-card"><div class="lesson-text"><h2>Lesson 2.2 – WH Questions & Structures</h2><p>Revisão de tempos verbais • WH-questions em contexto</p></div><a href="FLASH lesson 2.2 wh questions e estruturas.html" class="lesson-button">FLASHCARDS</a></div>
 
-        <a class="lesson-card" href="FLASH lesson 2.2 wh questions e estruturas.html">
-          <div class="lesson-main">
-            <span class="lesson-title">Lesson 2.1 – WH Questions & Structures</span>
-            <span class="lesson-subtitle">
-              Revisão de tempos verbais • WH-questions em contexto
-            </span>
-          </div>
-          <div class="lesson-tag">Flashcards</div>
-        </a>
+      <div class="lesson-card"><div class="lesson-text"><h2>Lesson 3 – Present Routine</h2><p>Rotina diária • Verbos de rotina • Organização do dia</p></div><a href="FLASH lesson 3 PRESENT ROUTINE SPEAK UP.html" class="lesson-button">FLASHCARDS</a></div>
 
-        <a class="lesson-card" href="FLASH lesson 3 PRESENT ROUTINE SPEAK UP.html">
-          <div class="lesson-main">
-            <span class="lesson-title">Lesson 3 – Present Routine</span>
-            <span class="lesson-subtitle">
-              Rotina diária • Verbos de rotina • Organização do dia
-            </span>
-          </div>
-          <div class="lesson-tag">Flashcards</div>
-        </a>
-      </div>
+      <div class="lesson-card"><div class="lesson-text"><h2>Lesson 3.2 – Present Routine • Structures</h2><p>Estruturas da rotina diária • It takes me • I am _ years old</p></div><a href="flash lesson 3.2 estruturas speak up.html" class="lesson-button">FLASHCARDS</a></div>
 
-      <p class="hint">
-        Dica: salve este link na tela inicial do celular para acessar os flashcards como se fosse um aplicativo.
-      </p>
-    </div>
+      <div class="lesson-card"><div class="lesson-text"><h2>Lesson 4 – Past Routine</h2><p>Rotina no passado • Verbos no passado • Organização do dia</p></div><a href="flash lesson 4 past routine speak up.html" class="lesson-button">FLASHCARDS</a></div>
+
+      <div class="lesson-card"><div class="lesson-text"><h2>Lesson 5 – House</h2><p>Cômodos da casa • Vocabulário de casa • Rotina em casa</p></div><a href="flash lesson 5 house speak up.html" class="lesson-button">FLASHCARDS</a></div>
+
+      <div class="lesson-card"><div class="lesson-text"><h2>Lesson 5.2 – House • Structures</h2><p>There is / There are • Preposições de lugar</p></div><a href="flash lesson 5.2 estruturas speak up (1).html" class="lesson-button">FLASHCARDS</a></div>
+
+      <div class="lesson-card"><div class="lesson-text"><h2>Lesson 6 – City</h2><p>Lugares na cidade • Perguntando direções • Como chegar</p></div><a href="flash lesson 6 city speak up.html" class="lesson-button">FLASHCARDS</a></div>
+
+      <div class="lesson-card"><div class="lesson-text"><h2>Lesson 6.2 – City • Structures</h2><p>Estruturas para dar direções • Imperativos</p></div><a href="flash lesson 6.2 estruturas speak up.html" class="lesson-button">FLASHCARDS</a></div>
+
+      <div class="lesson-card"><div class="lesson-text"><h2>Lesson 7 – Future Routine</h2><p>Rotina no futuro • Going to / Will</p></div><a href="flash lesson 7 rotina futuro speak up.html" class="lesson-button">FLASHCARDS</a></div>
+
+      <div class="lesson-card"><div class="lesson-text"><h2>Lesson 7.2 – Future Routine • Structures</h2><p>Estruturas futuras • Perguntas no futuro</p></div><a href="flash lesson 7.2 estruturas speak up.html" class="lesson-button">FLASHCARDS</a></div>
+
+      <div class="lesson-card"><div class="lesson-text"><h2>Lesson 8 – Yourself • Questions</h2><p>Perguntas pessoais • Small talk</p></div><a href="flash lesson 8 perguntas yourself speak up.html" class="lesson-button">FLASHCARDS</a></div>
+
+      <div class="lesson-card"><div class="lesson-text"><h2>Lesson 8.2 – Yourself • Structures</h2><p>Estruturas para respostas completas</p></div><a href="flash lesson 8.2 estruturas speak up.html" class="lesson-button">FLASHCARDS</a></div>
+
+      <p class="tip">Dica: salve este link na tela inicial do celular para acessar os flashcards como se fosse um aplicativo.</p>
+    </section>
+    <footer class="footer">FLASH • SPEAK UP — by Teacher Inês Braga</footer>
   </main>
-
-  <footer>
-    FLASH • SPEAK UP — by Teacher Inês Braga
-  </footer>
 </body>
 </html>
