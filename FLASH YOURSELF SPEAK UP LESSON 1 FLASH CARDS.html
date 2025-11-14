@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FLASH YOURSELF SPEAK UP LESSON 1 FLASH CARDS</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f3f5fb;
+    margin: 0;
+    padding: 24px;
+  }
+  .page-title {
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #0b2b4a;
+  }
+  .page-subtitle {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .flashcard {
+    perspective: 1000px;
+  }
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    text-align: center;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+  .card-inner.is-flipped {
+    transform: rotateY(180deg);
+  }
+  .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+  .card-front {
+    background: #0b2b4a;
+    color: #ffffff;
+  }
+  .card-back {
+    background: #ffffff;
+    color: #0b2b4a;
+    transform: rotateY(180deg);
+  }
+  .label {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.9;
+    margin-bottom: 6px;
+  }
+  .main-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  .sub-text {
+    font-size: 0.85rem;
+    opacity: 0.95;
+  }
+  .hint {
+    margin-top: 10px;
+    font-size: 0.75rem;
+    opacity: 0.9;
+  }
+  .brand {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 0.8rem;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+  <div class="page-title">FLASH YOURSELF • SPEAK UP • LESSON 1</div>
+  <div class="page-subtitle">Flash Cards – Portuguese → English • Click to flip each card</div>
+  <div class="grid">
+    
+    <div class="flashcard">
+      <div class="card-inner" id="card-1">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Deixe-me compartilhar algumas coisas sobre mim.</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">LET ME SHARE A FEW THINGS ABOUT ME.</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-2">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Meu primeiro nome é…</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">MY FIRST NAME IS…</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-3">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Meu sobrenome é…</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">MY LAST NAME IS…</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-4">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Meu nome completo é…</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">MY FULL NAME IS…</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-5">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu venho do Brasil.</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I COME FROM BRAZIL.</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-6">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu sou do Brasil.</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I AM FROM BRAZIL.</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-7">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Minha cidade natal é…</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">MY HOMETOWN IS…</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-8">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu fui criada em…</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I WAS RAISED IN…</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-9">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu cresci em…</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I GREW UP IN…</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-10">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Minha cidade atual é…</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">MY CURRENT CITY IS…</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-11">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu moro em…</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I LIVE IN…</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-12">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu tenho ___ anos.</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I AM ___ YEARS OLD.</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-13">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Meu aniversário é no dia… (mês e dia)</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">MY BIRTHDAY IS ON… (month and day)</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-14">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Meu aniversário é em… (mês)</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">MY BIRTHDAY IS IN… (month)</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-15">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu sou (introvertida, extrovertida).</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I AM (INTROVERTED, EXTROVERTED).</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-16">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu trabalho para…</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I WORK FOR…</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-17">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu ocupo o cargo de…</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I HOLD THE POSITION OF…</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-18">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu não tenho um emprego no momento.</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I DON'T HAVE A JOB RIGHT NOW.</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-19">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu sou (estudante, aposentada, faxineira, desempregada).</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I AM (A STUDENT, RETIRED, A HOUSEKEEPER, UNEMPLOYED).</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-20">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu estudo no(a)… / Eu frequento o(a)…</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I GO TO…</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-21">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu estudei no(a)…</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I WENT TO…</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-22">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu tenho um diploma em…</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I HAVE A DEGREE IN…</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-23">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu tenho (diploma do ensino fundamental / ensino médio).</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I HAVE (AN ELEMENTARY / A HIGH SCHOOL DIPLOMA).</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-24">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu sou certificada em…</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I AM CERTIFIED IN…</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-25">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu estou fazendo (cursando)…</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I AM TAKING…</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-26">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu estou me formando em…</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I AM (MAJORING / GRADUATING) IN…</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-27">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu estou no (ensino fundamental, ensino médio I, ensino médio II, faculdade, universidade).</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I AM IN (ELEMENTARY, JUNIOR HIGH SCHOOL, HIGH SCHOOL, COLLEGE, UNIVERSITY).</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-28">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Esse é um pequeno vislumbre sobre mim.</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">THAT’S A SMALL GLIMPSE INTO ME.</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-29">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu sou / Eu estou.</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I AM.</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-30">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu era / Eu estava.</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I WAS.</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-31">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu serei / Eu estarei.</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I WILL BE.</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-32">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu não sou / Eu não estou.</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I AM NOT.</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-33">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu não era / Eu não estava.</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I WAS NOT.</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-34">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu não serei / Eu não estarei.</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">I WILL NOT BE.</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-35">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu sou? / Eu estou?</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">AM I?</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-36">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu era? / Eu estava?</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">WAS I?</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="flashcard">
+      <div class="card-inner" id="card-37">
+        <div class="card-face card-front">
+          <div class="label">Frente • PT-BR</div>
+          <div class="main-text">Eu serei? / Eu estarei?</div>
+          <div class="sub-text">Pense na frase em inglês antes de virar.</div>
+          <div class="hint">(Clique ou toque para virar)</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="label">Verso • EN</div>
+          <div class="main-text">WILL I BE?</div>
+          <div class="sub-text">← Clique novamente para voltar</div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="brand">
+    English for Real Life – Teacher Inês Braga • All Rights Reserved
+  </div>
+
+<script>
+  document.querySelectorAll('.card-inner').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('is-flipped');
+    });
+  });
+</script>
+</body>
+</html>
