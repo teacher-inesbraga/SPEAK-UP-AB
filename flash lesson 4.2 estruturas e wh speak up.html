@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>flash lesson 4.2 estruturas e wh speak up</title>
+  <style>
+    :root {
+      --blue-front: #1e3a8a;
+      --text-dark: #0f172a;
+      --card-radius: 18px;
+      --shadow-soft: 0 12px 25px rgba(15, 23, 42, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #1e3a8a 0, #020617 55%, #020617 100%);
+      color: #e5e7eb;
+      min-height: 100vh;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      padding: 20px 12px 32px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1080px;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(18px);
+      border-radius: 24px;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.7);
+      padding: 20px 18px 26px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(30, 64, 175, 0.2);
+      color: #c7d2fe;
+      border: 1px solid rgba(129, 140, 248, 0.6);
+      width: fit-content;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #a5b4fc;
+      box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.4);
+    }
+
+    h1 {
+      font-size: 1.45rem;
+      line-height: 1.25;
+      color: #f9fafb;
+    }
+
+    .subtitle {
+      font-size: 0.85rem;
+      color: #cbd5f5;
+      max-width: 520px;
+    }
+
+    .grid-wrapper {
+      margin-top: 10px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    @media (min-width: 640px) {
+      .page {
+        padding: 24px 22px 30px;
+      }
+      .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+    }
+
+    @media (min-width: 960px) {
+      .card-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+    }
+
+    .card {
+      perspective: 1200px;
+      cursor: pointer;
+      height: 160px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+      transform-style: preserve-3d;
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card.is-flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: var(--card-radius);
+      padding: 14px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .card-front {
+      background: radial-gradient(circle at top left, #1e3a8a, #1d4ed8);
+      color: #f9fafb;
+    }
+
+    .card-back {
+      background: #f9fafb;
+      color: var(--text-dark);
+      transform: rotateY(180deg);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      line-height: 1.35;
+      font-weight: 500;
+    }
+
+    @media (min-width: 768px) {
+      .card-text {
+        font-size: 1rem;
+      }
+      .card {
+        height: 170px;
+      }
+    }
+
+    .hint {
+      margin-top: 10px;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hint-kbd {
+      border-radius: 6px;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      padding: 2px 6px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="badge">
+        <span class="badge-dot"></span>
+        FLASHCARDS PREMIUM · SPEAK UP
+      </div>
+      <h1>Lesson 4.2 · Estruturas & WH – Speak Up</h1>
+      <p class="subtitle">“I am supposed to…” + palavras WH. Frente em português, verso em inglês, sem transcrição.</p>
+    </header>
+
+    <section class="grid-wrapper">
+      <div class="card-grid">
+
+        <!-- I AM SUPPOSED TO... BLOCK -->
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                É para eu trabalhar.
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                I AM SUPPOSED TO WORK.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                Era para eu trabalhar.
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                I WAS SUPPOSED TO WORK.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                Não é para eu trabalhar.
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                I AM NOT SUPPOSED TO WORK.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                Não era para eu trabalhar.
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                I WAS NOT SUPPOSED TO WORK.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                É para eu trabalhar?
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                AM I SUPPOSED TO WORK?
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                Era para eu trabalhar?
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                WAS I SUPPOSED TO WORK?
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WH WORDS BLOCK -->
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                o quê / qual
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                What
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                onde
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                Where
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                quando
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                When
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                por quê
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                Why
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                quem
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                Who
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                quem (objeto)
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                Whom
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                de quem
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                Whose
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                qual / quais (opções de respostas)
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                Which
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                que horas
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                What time
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                para quê
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                What for
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                como
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                How
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                quanto (incontável)
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                How much
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                quantos (contável)
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                How many
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                com que frequência
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                How often
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                por quanto tempo / há quanto tempo
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                How long
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                quão longe / a que distância
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                How far
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                quantos anos
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                How old
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-text">
+                como assim? / por que? (informal)
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-text">
+                How come
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <p class="hint">
+        <span class="hint-kbd">Dica</span>
+        Toque nos cards no celular ou clique com o mouse para alternar entre português e inglês.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach((card) => {
+        card.addEventListener("click", () => {
+          card.classList.toggle("is-flipped");
+        });
+
+        card.addEventListener("keypress", (e) => {
+          const key = e.key || e.code;
+          if (key === "Enter" || key === " " || key === "Spacebar") {
+            e.preventDefault();
+            card.classList.toggle("is-flipped");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
